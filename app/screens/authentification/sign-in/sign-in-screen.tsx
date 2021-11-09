@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite"
 import {TextInput, TextStyle, View, ViewStyle } from "react-native"
 import { AuthInput, Button, Screen, Text, } from "../../../components"
 import { useNavigation } from "@react-navigation/native"
-import { useStores } from "../../models"
+//import { useStores } from "../../models"
 import { color } from "../../../theme"
 import { SafeAreaView } from "react-native-safe-area-context"
 import metrics from "../../../theme/metrics"
@@ -16,6 +16,7 @@ export const SignInScreen = observer(function SignInScreen() {
 
   // Pull in navigation via hook
   const navigation = useNavigation()
+ // const {UserStore}=useStores()
   const [userName,setUserName]=useState({
     name : "ahmed",
     password :"1111",
