@@ -26,7 +26,7 @@ export const SignInScreen = observer(function SignInScreen() {
         <AuthInput textinput="Enter Your username" />
       </SafeAreaView>
       <TextField
-      //onChangeText
+      //onChangeText  
       />
 
     </Screen>
