@@ -50,7 +50,8 @@ export const AuthInput = observer(function AuthInput(props: AuthInputProps) {
     <View style={styles}>
       <View style={INPUT}>
         <TextInput  placeholder={props.textinput}
-      
+        {...rest}
+        ref={forwardedRef}
         />
       </View>
     </View>

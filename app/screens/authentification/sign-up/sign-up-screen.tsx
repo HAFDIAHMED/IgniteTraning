@@ -1,25 +1,78 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { observer } from "mobx-react-lite"
-import { ViewStyle } from "react-native"
-import { Screen, Text } from "../../../components"
-// import { useNavigation } from "@react-navigation/native"
+import { SafeAreaView, TextStyle, ViewStyle } from "react-native"
+import { AuthInput, Button, Screen, Text } from "../../../components"
+import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color } from "../../../theme"
-
-const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
-  flex: 1,
-}
+import metrics from "../../../theme/metrics"
 
 export const SignUpScreen = observer(function SignUpScreen() {
   // Pull in one of our MST stores
   // const { someStore, anotherStore } = useStores()
 
   // Pull in navigation via hook
-  // const navigation = useNavigation()
+  const [userName,setUserName]=useState({
+    name : "ahmed",
+    password :"1111",
+  });
+  useEffect(()=>{
+    console.log(userName)
+  });
+  const navigation = useNavigation()
   return (
     <Screen style={ROOT} preset="scroll">
-      <Text preset="header" text="" />
+      <SafeAreaView >
+        <Text preset="header" text="SIGNUP" style={HEADER_TEXT}/>
+        
+        <AuthInput textinput="Enter Your username" 
+          onChangeText={(text)=>{userName.name=text}} 
+          style={AuthenStyle}
+        />
+        <AuthInput textinput="Enter Your password" 
+          onChangeText={(text)=>{userName.password=text}} 
+          style={AuthenStyle}
+        />
+        <AuthInput textinput="Confirm Your password" 
+          onChangeText={(text)=>{userName.password=text}} 
+          style={AuthenStyle}
+        />
+        {
+          <Text>{userName.password}</Text>
+        }
+        
+        <Button  text ="SignUp" onPress={()=>
+        {setUserName({ name :userName.name,password:userName.password});
+        navigation.navigate("signin");
+        }
+        
+                                    }
+          style={BUTTON_SIGNIN}
+          textStyle={BUTTON_TEXT}
+        />
+       
+
+      </SafeAreaView>
     </Screen>
   )
 })
+
+const ROOT: ViewStyle = {
+  backgroundColor: color.palette.black,
+  flex: 1,
+  justifyContent:'center',
+}
+const AuthenStyle : ViewStyle={
+  marginVertical:metrics.heightPercentageToDP(1),
+}
+const BUTTON_SIGNIN : ViewStyle={
+  marginHorizontal:metrics.widthPercentageToDP(30),
+  marginVertical:metrics.heightPercentageToDP(5),
+  
+}
+const HEADER_TEXT : TextStyle={
+  alignSelf:'center',
+}
+const BUTTON_TEXT : TextStyle={
+  fontSize:20,
+}
