@@ -21,13 +21,14 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {UserStore}=useStores()
   //const {Users}=UserStore
   const {ProfileStore}=useStores()
-  const {users}=ProfileStore
+  const {Users}=ProfileStore
   const [userName,setUserName]=useState({
     name : "ahmed",
     password :"1111",
   });
   useEffect(()=>{
     console.log(userName)
+    console.log(ProfileStore)
   });
   return (
     
@@ -49,7 +50,8 @@ export const SignInScreen = observer(function SignInScreen() {
         
         <Button  text ="SignIn" onPress={()=>
         {setUserName({ name :userName.name,password:userName.password});
-        navigation.navigate("signup");
+        //navigation.navigate("signup");
+        ProfileStore.AddUser(userName)
         } }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
