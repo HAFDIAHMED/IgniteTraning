@@ -6,8 +6,8 @@ import { Instance, SnapshotOut, types } from "mobx-state-tree"
 export const UserModel = types
   .model("User")
   .props({
-    UserName : types.string,
-    UserPassword : types.string
+    userName : types.maybeNull(types.string),
+    userPassword : types.maybeNull(types.string),
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
