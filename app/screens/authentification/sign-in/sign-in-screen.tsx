@@ -27,7 +27,8 @@ export const SignInScreen = observer(function SignInScreen() {
     userPassword :"1111",
   });
   useEffect(()=>{
-    console.log(mail)
+    console.log(mail);
+    [...Users,Users,[]]
     console.log(Users)
   });
   return (
