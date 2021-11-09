@@ -8,6 +8,7 @@ import { useNavigation } from "@react-navigation/native"
 import { color } from "../../../theme"
 import { SafeAreaView } from "react-native-safe-area-context"
 import metrics from "../../../theme/metrics"
+import { useStores } from "../../../models"
 
 
 
@@ -19,6 +20,8 @@ export const SignInScreen = observer(function SignInScreen() {
   const navigation = useNavigation()
   //const {UserStore}=useStores()
   //const {Users}=UserStore
+  const {ProfileStore}=useStores()
+  const {users}=ProfileStore
   const [userName,setUserName]=useState({
     name : "ahmed",
     password :"1111",
@@ -47,13 +50,10 @@ export const SignInScreen = observer(function SignInScreen() {
         <Button  text ="SignIn" onPress={()=>
         {setUserName({ name :userName.name,password:userName.password});
         navigation.navigate("signup");
-        }
-        
-                                    }
+        } }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-       
 
       </SafeAreaView>
     </Screen>
