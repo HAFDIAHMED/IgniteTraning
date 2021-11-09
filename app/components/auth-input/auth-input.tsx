@@ -1,9 +1,10 @@
 import * as React from "react"
-import { StyleProp, TextStyle, View, ViewStyle } from "react-native"
+import { StyleProp, TextInput, TextStyle, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import { color, typography } from "../../theme"
 import { Text } from "../text/text"
 import { flatten } from "ramda"
+import metrics from "../../theme/metrics"
 
 const CONTAINER: ViewStyle = {
   justifyContent: "center",
@@ -15,10 +16,17 @@ const TEXT: TextStyle = {
   color: color.primary,
 }
 
+const INPUT : ViewStyle = {
+  borderWidth:1,
+  marginHorizontal:metrics.widthPercentageToDP(5),
+  backgroundColor:color.palette.white,
+  borderRadius:20,
+}
 export interface AuthInputProps {
   /**
    * An optional style override useful for padding & margin.
    */
+  textinput : string
   style?: StyleProp<ViewStyle>
 }
 
@@ -31,7 +39,11 @@ export const AuthInput = observer(function AuthInput(props: AuthInputProps) {
 
   return (
     <View style={styles}>
-      <Text style={TEXT}>Hello</Text>
+      <View style={INPUT}>
+        <TextInput  placeholder={props.textinput}
+        
+        />
+      </View>
     </View>
   )
 })
