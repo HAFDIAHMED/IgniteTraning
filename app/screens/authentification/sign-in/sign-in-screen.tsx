@@ -18,17 +18,16 @@ export const SignInScreen = observer(function SignInScreen() {
 
   // Pull in navigation via hook
   const navigation = useNavigation()
-  //const {UserStore}=useStores()
-  //const {Users}=UserStore
-  //const {ProfileStore}=useStores()
-  //const {Users}=ProfileStore
+  
+  const {ProfileStore}=useStores()
+  const {Users}=ProfileStore
   const [userName,setUserName]=useState({
-    name : "ahmed",
-    password :"1111",
+    userName : "ahmed",
+    userPassword :"1111",
   });
   useEffect(()=>{
     console.log(userName)
-    //console.log(Users.length)
+    console.log(Users)
   });
   return (
     
@@ -38,20 +37,20 @@ export const SignInScreen = observer(function SignInScreen() {
         <Text preset="header" text="SIGNIN" style={HEADER_TEXT}/>
         
         <AuthInput textinput="Enter Your username" 
-          onChangeText={(text)=>{userName.name=text}} 
+          onChangeText={(text)=>{userName.userName=text}} 
           style={AuthenStyle}
           
         />
         <AuthInput textinput="Enter Your password" 
-          onChangeText={(text)=>{userName.password=text}} 
+          onChangeText={(text)=>{userName.userPassword=text}} 
           style={AuthenStyle}
           secureTextEntry={true}
         />
         
         <Button  text ="SignIn" onPress={()=>
-        {setUserName({ name :userName.name,password:userName.password});
+        {setUserName({ userName :userName.userName,userPassword:userName.userPassword});
         //navigation.navigate("signup");
-        //ProfileStore.AddUser(userName)
+        ProfileStore.AddUser(userName)
         } }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
