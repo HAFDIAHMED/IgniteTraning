@@ -44,10 +44,14 @@ export const SignUpScreen = observer(function SignUpScreen() {
         <AuthInput textinput="Enter Your password" 
           onChangeText={(text)=>{userName.password=text}} 
           style={AuthenStyle}
+          secureTextEntry={true}
+
         />
         <AuthInput textinput="Confirm Your password" 
           onChangeText={(text)=>{setConfirmPWD(text)}} 
           style={AuthenStyle}
+          secureTextEntry={true}
+
         />
         {
             ConfirmPassword(userName.password,confirmPWD) 

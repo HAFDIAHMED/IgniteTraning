@@ -33,10 +33,12 @@ export const SignInScreen = observer(function SignInScreen() {
         <AuthInput textinput="Enter Your username" 
           onChangeText={(text)=>{userName.name=text}} 
           style={AuthenStyle}
+          
         />
         <AuthInput textinput="Enter Your password" 
           onChangeText={(text)=>{userName.password=text}} 
           style={AuthenStyle}
+          secureTextEntry={true}
         />
         
         <Button  text ="SignIn" onPress={()=>
