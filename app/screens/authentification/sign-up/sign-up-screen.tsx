@@ -16,10 +16,22 @@ export const SignUpScreen = observer(function SignUpScreen() {
     name : "ahmed",
     password :"1111",
   });
+  const [confirmPWD,setConfirmPWD]=useState('');
   useEffect(()=>{
     console.log(userName)
   });
-  const navigation = useNavigation()
+  const navigation = useNavigation();
+  const ConfirmPassword=(pwd1: any,pwd2: any)=>{
+      if(pwd1===pwd2){
+        return(
+          <Text>passwords are matched</Text>
+        );
+      }else {
+        return(
+          <Text>passwords dont match </Text>
+        );
+      }
+  }
   return (
     <Screen style={ROOT} preset="scroll">
       <SafeAreaView >
@@ -34,11 +46,11 @@ export const SignUpScreen = observer(function SignUpScreen() {
           style={AuthenStyle}
         />
         <AuthInput textinput="Confirm Your password" 
-          onChangeText={(text)=>{userName.password=text}} 
+          onChangeText={(text)=>{setConfirmPWD(text)}} 
           style={AuthenStyle}
         />
         {
-          <Text>{userName.password}</Text>
+            ConfirmPassword(userName.password,confirmPWD) 
         }
         
         <Button  text ="SignUp" onPress={()=>
