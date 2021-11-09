@@ -17,16 +17,17 @@ export const SignInScreen = observer(function SignInScreen() {
   // const { someStore, anotherStore } = useStores()
 
   // Pull in navigation via hook
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   
-  const {ProfileStore}=useStores()
-  const {Users}=ProfileStore
+  const {ProfileStore}=useStores();
+  const {Users}=ProfileStore;
+  const [mail,setEmail]=useState({mail:""});
   const [userName,setUserName]=useState({
     userName : "ahmed",
     userPassword :"1111",
   });
   useEffect(()=>{
-    console.log(userName)
+    console.log(mail)
     console.log(Users)
   });
   return (
@@ -49,8 +50,9 @@ export const SignInScreen = observer(function SignInScreen() {
         
         <Button  text ="SignIn" onPress={()=>
         {setUserName({ userName :userName.userName,userPassword:userName.userPassword});
+        setEmail({mail:"ahmedhafdi"})
         //navigation.navigate("signup");
-        ProfileStore.AddUser(userName)
+        ProfileStore.AddUser(mail)
         } }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
