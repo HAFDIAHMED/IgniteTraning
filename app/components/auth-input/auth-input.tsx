@@ -21,6 +21,7 @@ const INPUT : ViewStyle = {
   marginHorizontal:metrics.widthPercentageToDP(5),
   backgroundColor:color.palette.white,
   borderRadius:20,
+  
 }
 const PRESETS: { [name: string]: ViewStyle } = {
   default: {},
@@ -33,19 +34,24 @@ export interface AuthInputProps {
   textinput : string
   style?: StyleProp<ViewStyle>
   preset?: keyof typeof PRESETS
+  forwardedRef?: any
+  children?: React.ReactNode
+
 }
 
 /**
  * Describe your component here
  */
 export const AuthInput = observer(function AuthInput(props: AuthInputProps) {
-  const { style } = props
+  const { style,forwardedRef ,...rest} = props
   const styles = flatten([CONTAINER, style])
 
   return (
     <View style={styles}>
       <View style={INPUT}>
         <TextInput  placeholder={props.textinput}
+        {...rest}
+        ref={forwardedRef}
         />
       </View>
     </View>
