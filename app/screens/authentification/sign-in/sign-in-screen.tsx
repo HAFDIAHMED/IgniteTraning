@@ -1,7 +1,7 @@
 import React from "react"
 import { observer } from "mobx-react-lite"
 import { TextInput, View, ViewStyle } from "react-native"
-import { AuthInput, Screen, Text, TextField } from "../../../components"
+import { AuthInput, Button, Screen, Text, TextField } from "../../../components"
 // import { useNavigation } from "@react-navigation/native"
 // import { useStores } from "../../models"
 import { color } from "../../../theme"
@@ -23,15 +23,11 @@ export const SignInScreen = observer(function SignInScreen() {
       <SafeAreaView>
         <Text preset="header" text="singin" />
         
-        <AuthInput textinput="Enter Your username"  
-        
+        <AuthInput textinput="Enter Your useggrname" 
+         
         />
         
       </SafeAreaView>
-      <TextField
-      //onChangeText  
-      />
-
     </Screen>
   
     

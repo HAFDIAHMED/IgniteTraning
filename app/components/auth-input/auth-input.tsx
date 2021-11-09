@@ -1,5 +1,5 @@
 import * as React from "react"
-import { StyleProp, TextInput, TextStyle, View, ViewStyle } from "react-native"
+import { StyleProp, TextInput, TextInputProps, TextStyle, View, ViewStyle } from "react-native"
 import { observer } from "mobx-react-lite"
 import { color, typography } from "../../theme"
 import { Text } from "../text/text"
@@ -27,7 +27,7 @@ const PRESETS: { [name: string]: ViewStyle } = {
   default: {},
 }
 
-export interface AuthInputProps {
+export interface AuthInputProps extends TextInputProps {
   /**
    * An optional style override useful for padding & margin.
    */
@@ -35,7 +35,7 @@ export interface AuthInputProps {
   style?: StyleProp<ViewStyle>
   preset?: keyof typeof PRESETS
   forwardedRef?: any
-  children?: React.ReactNode
+  
 
 }
 
@@ -50,8 +50,7 @@ export const AuthInput = observer(function AuthInput(props: AuthInputProps) {
     <View style={styles}>
       <View style={INPUT}>
         <TextInput  placeholder={props.textinput}
-        {...rest}
-        ref={forwardedRef}
+      
         />
       </View>
     </View>
