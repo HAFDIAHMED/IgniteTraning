@@ -8,7 +8,7 @@ import { CharacterStoreModel } from "../character-store/character-store"
 // prettier-ignore
 export const RootStoreModel = types.model("RootStore").props({
   characterStore: types.optional(CharacterStoreModel, {} as any),
-  userStore : types.optional(UserStoreModel,{} as UserStore)
+ userStore : types.optional(UserStoreModel,{} )
 })
 
 /**
