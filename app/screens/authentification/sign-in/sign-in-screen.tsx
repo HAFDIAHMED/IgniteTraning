@@ -28,9 +28,12 @@ export const SignInScreen = observer(function SignInScreen() {
   });
   useEffect(()=>{
     console.log(mail);
-    [...Users,Users,[]]
+   
     console.log(Users)
   });
+  const AjouterProfile=(NewProfil)=>{
+    ProfileStore.AddUser(NewProfil)
+  }
   return (
     
     <Screen style={ROOT} preset="scroll">
@@ -53,7 +56,7 @@ export const SignInScreen = observer(function SignInScreen() {
         {setUserName({ userName :userName.userName,userPassword:userName.userPassword});
         setEmail({mail:"ahmedhafdi"})
         //navigation.navigate("signup");
-        ProfileStore.AddUser(mail)
+        AjouterProfile(mail)
         } }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
