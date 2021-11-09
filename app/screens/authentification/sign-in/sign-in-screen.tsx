@@ -23,7 +23,7 @@ export const SignInScreen = observer(function SignInScreen() {
       <SafeAreaView>
         <Text preset="header" text="singin" />
         
-        <AuthInput textinput="Enter Your username" />
+        <AuthInput textinput="Enter Your username"  />
       </SafeAreaView>
       <TextField
       //onChangeText  

@@ -22,12 +22,17 @@ const INPUT : ViewStyle = {
   backgroundColor:color.palette.white,
   borderRadius:20,
 }
+const PRESETS: { [name: string]: ViewStyle } = {
+  default: {},
+}
+
 export interface AuthInputProps {
   /**
    * An optional style override useful for padding & margin.
    */
   textinput : string
   style?: StyleProp<ViewStyle>
+  preset?: keyof typeof PRESETS
 }
 
 /**
@@ -41,7 +46,6 @@ export const AuthInput = observer(function AuthInput(props: AuthInputProps) {
     <View style={styles}>
       <View style={INPUT}>
         <TextInput  placeholder={props.textinput}
-        
         />
       </View>
     </View>
