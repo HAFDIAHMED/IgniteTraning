@@ -12,12 +12,12 @@ export const TacheStoreModel = types
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
     AddTache(NewTache){
-      ///self.taches.push(NewTache)
-      console.log(NewTache)
+    self.taches.push(TacheModel.create({
+      title : NewTache.title
+    }))
+      
     },
-    RemoveTache(NewTask){
-      destroy(NewTask)
-    }
+    
   }))
    // eslint-disable-line @typescript-eslint/no-unused-vars
 
