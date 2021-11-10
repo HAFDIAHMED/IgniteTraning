@@ -9,7 +9,7 @@ import { CharacterStoreModel } from "../character-store/character-store"
 export const RootStoreModel = types.model("RootStore").props({
    characterStore: types.optional(CharacterStoreModel, {} as any),
    //ProfileStore : types.optional(UserStoreModel,{} )
-   //tacheStore : types.optional(TacheStoreModel,{})
+   tacheStore : types.optional(TacheStoreModel,{})
 })
 
 /**
