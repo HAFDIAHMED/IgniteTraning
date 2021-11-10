@@ -9,7 +9,11 @@ export const TacheStoreModel = types
   .props({
     taches : types.optional(types.array(TacheModel),[{title : "task 1"}])
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((self) => ({
+    get getTaches(){
+      return self.taches
+    }
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
     AddTache(taches : any){
     //self.taches.clear(),

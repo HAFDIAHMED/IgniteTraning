@@ -8,9 +8,15 @@ export const TacheModel = types
   .props({
     title : types.optional(types.string,"")
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((self) => ({
+    get getTitle(){
+      return self.title
+    }
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
-    
+    setTitle(value : string){
+      self.title=value
+    }
 
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
