@@ -6,7 +6,7 @@ import { Instance, SnapshotOut, types } from "mobx-state-tree"
 export const TacheModel = types
   .model("Tache")
   .props({
-    title : types.optional(types.string,"")
+    title : types.optional(types.string,"task title")
   })
   .views((self) => ({
     get getTitle(){
