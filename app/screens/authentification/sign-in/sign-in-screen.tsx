@@ -36,8 +36,8 @@ export const SignInScreen = observer(function SignInScreen() {
     //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
     //[...tacheStore.getTaches,[]]
-    //console.log(tacheStore.getTaches)
-    console.log(task)
+    console.log(tacheStore.getTaches[15])
+    //console.log(task)
     
   });
   return ( 
@@ -51,6 +51,13 @@ export const SignInScreen = observer(function SignInScreen() {
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
+        <Text>hello</Text>
+        {
+          tacheStore.getTaches.map((tasks,i)=>{
+
+            return (<Text style={{color : "white"}}>{tasks.title}{i}</Text>);
+          })
+        }
         
       </SafeAreaView>
     </Screen>
