@@ -31,7 +31,7 @@ export const SignInScreen = observer(function SignInScreen() {
   const  AjouterTache=(newTache)=>{
     tacheStore.AddTache(newTache)
   }
-  [...tacheStore.taches,[]]
+  //[...tacheStore.taches,[]]
   useEffect(()=>{
     //setTask({title : "task 1"})
     //AjouterTache(task)

@@ -7,7 +7,7 @@ import { TacheModel } from ".."
 export const TacheStoreModel = types
   .model("TacheStore")
   .props({
-    taches : types.optional(types.array(TacheModel),[{title : "task 1"},{title : "task 2"}])
+    taches : types.optional(types.array(TacheModel),[])
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
