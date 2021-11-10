@@ -22,7 +22,7 @@ export const SignInScreen = observer(function SignInScreen() {
   
   //const {ProfileStore}=useStores();
   //const {Users}=ProfileStore;
-  const {tacheStore}=useStores()
+  //const {tacheStore}=useStores()
   //const {taches}=tacheStore
   
   const [task,setTask]=useState({title:"task 1"});
@@ -48,7 +48,7 @@ export const SignInScreen = observer(function SignInScreen() {
           onChangeText={(text)=>setTask({title:text})} 
           style={AuthenStyle}  
         />
-        <Button  text ="Add Task" onPress={()=>{ tacheStore.AddTache(task);}}
+        <Button  text ="Add Task" onPress={()=>{ console.log("hello")}}
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
