@@ -11,6 +11,7 @@ export const TacheModel = types
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
     
+
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type TacheType = Instance<typeof TacheModel>
