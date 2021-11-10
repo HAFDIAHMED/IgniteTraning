@@ -33,7 +33,7 @@ export const SignInScreen = observer(function SignInScreen() {
   
   useEffect(()=>{
     //tacheExample.setTitle(task.title)
-    console.log(tacheStore.getTaches[1])
+    //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
    // console.log(tacheStore.getTaches)
     
@@ -49,11 +49,7 @@ export const SignInScreen = observer(function SignInScreen() {
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-        {
-          tacheStore.getTaches.map((tasks,i)=>{
-            <Text>{tacheStore.getTaches[i]}</Text>
-          })
-        }
+        
       </SafeAreaView>
     </Screen>
   

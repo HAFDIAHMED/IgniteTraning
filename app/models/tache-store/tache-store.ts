@@ -16,6 +16,7 @@ export const TacheStoreModel = types
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
     AddTache(NewTask : any){
+      console.log(self.taches);
     //self.taches.clear(),
     self.taches.push(TacheModel.create({
       title : NewTask.title,
