@@ -17,7 +17,7 @@ export const TacheStoreModel = types
   .actions((self) => ({
     AddTache(NewTask : any){
       
-    //self.taches.clear(),
+    self.taches.clear(),
     self.taches.push(TacheModel.create({
       title : NewTask.title,
     }))

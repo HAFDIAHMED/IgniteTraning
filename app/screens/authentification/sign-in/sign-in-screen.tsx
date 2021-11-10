@@ -9,6 +9,7 @@ import { color } from "../../../theme"
 import { SafeAreaView } from "react-native-safe-area-context"
 import metrics from "../../../theme/metrics"
 import { useStores } from "../../../models"
+import { ScrollView } from "react-native-gesture-handler"
 
 
 
@@ -23,7 +24,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {Users}=ProfileStore;
   const {tacheStore}=useStores()
   //const {taches}=tacheStore
-  const {tacheExample}=useStores();
+  
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
     userName : "ahmed",
@@ -36,12 +37,12 @@ export const SignInScreen = observer(function SignInScreen() {
     //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
     //[...tacheStore.getTaches,[]]
-    console.log(tacheStore.getTaches[15])
+    //console.log(tacheStore.getTaches[15])
     //console.log(task)
     
   });
   return ( 
-    <Screen style={ROOT} preset="scroll">
+    <Screen style={ROOT} preset="fixed">
       <SafeAreaView >
          <AuthInput textinput="Enter a task" 
           onChangeText={(text)=>setTask({title:text})} 
@@ -52,13 +53,14 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Text>hello</Text>
+        <ScrollView>
         {
           tacheStore.getTaches.map((tasks,i)=>{
 
             return (<Text style={{color : "white"}}>{tasks.title}{i}</Text>);
           })
         }
-        
+        </ScrollView>
       </SafeAreaView>
     </Screen>
   
