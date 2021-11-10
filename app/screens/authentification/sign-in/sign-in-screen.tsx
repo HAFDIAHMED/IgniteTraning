@@ -21,8 +21,8 @@ export const SignInScreen = observer(function SignInScreen() {
   
   //const {ProfileStore}=useStores();
   //const {Users}=ProfileStore;
-  //const {tacheStore}=useStores()
-  //const {taches}=tacheStore
+  const {tacheStore}=useStores()
+  const {taches}=tacheStore
   const [task,setTask]=useState({title:""});
   const [userName,setUserName]=useState({
     userName : "ahmed",
@@ -34,7 +34,7 @@ export const SignInScreen = observer(function SignInScreen() {
   useEffect(()=>{
     //setTask({title : "task 1"})
     //AjouterTache(task)
-    console.log("hello")
+    console.log(taches)
     
   });
  
