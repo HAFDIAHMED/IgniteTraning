@@ -53,14 +53,7 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Text>hello</Text>
-        <ScrollView>
-        {
-          tacheStore.getTaches.map((tasks,i)=>{
-
-            return (<Text style={{color : "white"}}>{tasks.title}{i}</Text>);
-          })
-        }
-        </ScrollView>
+        
       </SafeAreaView>
     </Screen>
   
