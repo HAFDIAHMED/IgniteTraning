@@ -29,7 +29,10 @@ export const SignInScreen = observer(function SignInScreen() {
     userPassword :"1111",
   });
 
- 
+ const AjouterTache=(NewTask)=>{
+   tacheStore.AddTache(NewTask)
+   console.log(tacheStore.taches)
+ }
   //[...tacheStore.taches,[]]
   useEffect(()=>{
     //setTask({title : "task 1"})
@@ -52,7 +55,7 @@ export const SignInScreen = observer(function SignInScreen() {
           
         />
         
-        <Button  text ="Add Task" onPress={()=>tacheStore.AddTache(task) }
+        <Button  text ="Add Task" onPress={()=>AjouterTache(task) }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
