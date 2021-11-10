@@ -15,13 +15,11 @@ export const TacheStoreModel = types
     }
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
-    AddTache(taches : any){
+    AddTache(NewTask : any){
     //self.taches.clear(),
-    self.taches.forEach(element => {
-      self.taches.push(TacheModel.create({
-        title : element.title,
-      }))
-    });
+    self.taches.push(TacheModel.create({
+      title : NewTask.title,
+    }))
    
       
     },

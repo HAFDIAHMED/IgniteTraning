@@ -21,9 +21,9 @@ export const SignInScreen = observer(function SignInScreen() {
   
   //const {ProfileStore}=useStores();
   //const {Users}=ProfileStore;
-  //const {tacheStore}=useStores()
+  const {tacheStore}=useStores()
   //const {taches}=tacheStore
-   //const {tacheExample}=useStores();
+  const {tacheExample}=useStores();
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
     userName : "ahmed",
@@ -32,8 +32,11 @@ export const SignInScreen = observer(function SignInScreen() {
   const todos ={"taches": [{title : "ff"}]}
   
   useEffect(()=>{
-    //tacheExample.setTitle("ahmed")
+    //tacheExample.setTitle(task.title)
+    console.log(tacheStore.getTaches[1])
     //console.log(tacheExample.getTitle)
+   // console.log(tacheStore.getTaches)
+    
   });
   return ( 
     <Screen style={ROOT} preset="scroll">
@@ -42,11 +45,15 @@ export const SignInScreen = observer(function SignInScreen() {
           onChangeText={(text)=>setTask({title:text})} 
           style={AuthenStyle}  
         />
-        <Button  text ="Add Task" onPress={()=>console.log("task")}
+        <Button  text ="Add Task" onPress={()=>{ tacheStore.AddTache(task);}}
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-        <Text>hello</Text>
+        {
+          tacheStore.getTaches.map((tasks,i)=>{
+            <Text>{tacheStore.getTaches[i]}</Text>
+          })
+        }
       </SafeAreaView>
     </Screen>
   
