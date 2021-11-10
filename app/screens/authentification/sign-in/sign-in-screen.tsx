@@ -21,45 +21,48 @@ export const SignInScreen = observer(function SignInScreen() {
   
   //const {ProfileStore}=useStores();
   //const {Users}=ProfileStore;
-  const [mail,setEmail]=useState({mail:""});
+  const {tacheStore}=useStores()
+  const {taches}=tacheStore
+  const [task,setTask]=useState({title:""});
   const [userName,setUserName]=useState({
     userName : "ahmed",
     userPassword :"1111",
   });
-  
+  const  AjouterTache=(newTache)=>{
+    tacheStore.AddTache(newTache)
+  }
+  [...tacheStore.taches,[]]
   useEffect(()=>{
-    console.log(mail);
-   
+    //setTask({title : "task 1"})
+    //AjouterTache(task)
+    //console.log(taches)
+    console.log(tacheStore.taches)
     
   });
+ 
   
   return (
     
     <Screen style={ROOT} preset="scroll">
 
       <SafeAreaView >
-        <Text preset="header" text="SIGNIN" style={HEADER_TEXT}/>
         
-        <AuthInput textinput="Enter Your username" 
-          onChangeText={(text)=>{userName.userName=text}} 
+         <AuthInput textinput="Enter a task" 
+          onChangeText={(text)=>setTask({title:text})} 
           style={AuthenStyle}
           
         />
-        <AuthInput textinput="Enter Your password" 
-          onChangeText={(text)=>{userName.userPassword=text}} 
-          style={AuthenStyle}
-          secureTextEntry={true}
-        />
         
-        <Button  text ="SignIn" onPress={()=>
-        {setUserName({ userName :userName.userName,userPassword:userName.userPassword});
-        
-        navigation.navigate("signup");
-        
-        } }
+        <Button  text ="Add Task" onPress={()=>AjouterTache(task) }
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
+        <Text>hello</Text>
+        {
+          taches.map((tasks,i)=>{
+            <Text key={i}>task</Text>
+          })
+        }
       </SafeAreaView>
     </Screen>
   
