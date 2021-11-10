@@ -35,7 +35,9 @@ export const SignInScreen = observer(function SignInScreen() {
     //tacheExample.setTitle(task.title)
     //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
-   // console.log(tacheStore.getTaches)
+    //[...tacheStore.getTaches,[]]
+    //console.log(tacheStore.getTaches)
+    console.log(task)
     
   });
   return ( 
