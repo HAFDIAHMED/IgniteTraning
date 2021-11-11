@@ -104,7 +104,7 @@ export class Api {
   async fetchProfils( ): Promise<Types.ProfilesApi> {
     //make api call
     
-      const response : ApiResponse<any>= await this.apisauce.get('/person');
+      const response : ApiResponse<any>= await this.apisauce.get('/user');
       
     //the typical ways to die when calling an api
       if(!response.ok){
@@ -116,10 +116,8 @@ export class Api {
       //transform the data to format json
       try {
         const jsonResponse =response.data;
-        const [list, setList]=useState([]);
         const data ={ name : jsonResponse.name, job : jsonResponse.job}
-        setList(jsonResponse)
-        console.log(response)
+        console.log(response.data)
         return data
         //const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
       } catch (error) {
