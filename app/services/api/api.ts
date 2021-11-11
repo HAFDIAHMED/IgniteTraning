@@ -111,7 +111,10 @@ export class Api {
       }
       //transform the data to format json
       try {
-        const jsonResponse =response.json()
+        const jsonResponse =response.data.json();
+        const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
+      }catch {
+        return {kind : "bad-data"}
       }
   }
 }
