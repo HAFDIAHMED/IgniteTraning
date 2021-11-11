@@ -47,6 +47,9 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/user") );
   }
+  const GetProfiles= async()=>{
+      await profilesStore.getProfile();
+  }
   useEffect( ()=>{
     //tacheExample.setTitle(task.title)
     //console.log(tacheStore.getTaches[0])
