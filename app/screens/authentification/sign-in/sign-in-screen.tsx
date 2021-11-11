@@ -30,7 +30,7 @@ export const SignInScreen = observer(function SignInScreen() {
     userName : "ahmed",
     userPassword :"1111",
   });
-  const [usersList,setUsersList]=useState([]);
+  const [usersList,setUsersList]=useState({});
   const [ProfilList,setProfilList]=useState([]);
   const FetchUsers=async (url_user) =>{
       try {
@@ -71,14 +71,7 @@ export const SignInScreen = observer(function SignInScreen() {
         />
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
       
-        {
-          usersList.map((profils,index)=>{
-              <View>
-                <Text> name : {profils.name}</Text>
-                <Text> name : {profils.name}</Text>
-                </View>
-          })
-        }
+     
          
         
       </SafeAreaView>

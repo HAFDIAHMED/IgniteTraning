@@ -21,10 +21,8 @@
       "image": "https://pbs.twimg.com/profile_images/429442426038538240/6Ac9kykG_400x400.jpeg"
     }
   ],
-  "user": [
-    {
-      "name": "ahmed sucees done yeeeeeeeeeees ",
-      "job": "job  sucess  done "
-    }
-  ]
+  "user": {
+    "name": "ahmed sucees done yeeeeeeeeeees ",
+    "job": "job  sucess  done "
+  }
 }
