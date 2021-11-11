@@ -49,11 +49,9 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/person") );
   }
-  const Get2=async ()=>{
-    setProfilList( await profilesStore.getProfile())  }
+  
   
   useEffect( ()=>{
-    
     console.log(profilesStore.getProfile())  
   });
   return ( 
@@ -68,15 +66,7 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
-        {
-          usersList.map((profil,index)=>{
-            return(
-              <View>
-                <Text key={index}>user name : {profil.name}</Text>
-              </View>
-            );
-          })
-        }
+      
 
          
         
