@@ -117,7 +117,7 @@ export class Api {
         const jsonResponse =response.data;
         
         const data ={ name : jsonResponse.name, job : jsonResponse.job}
-        console.log(jsonResponse)
+        console.log(response.data)
         return response.data
         //const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
       } catch (error) {
