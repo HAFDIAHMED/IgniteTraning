@@ -30,8 +30,17 @@ export const SignInScreen = observer(function SignInScreen() {
     userName : "ahmed",
     userPassword :"1111",
   });
-  const todos ={"taches": [{title : "ff"}]}
-  
+  const [usersList,setUsersList]=useState([]);
+  const FetchUsers=async () =>{
+      try {
+          const response =await fetch("http://192.168.0.106:3000/user");
+          const json = await response.json();
+          //setUsersList([])
+          setUsersList(json);
+      }catch(error){
+        console.error(error)
+      }
+  }
   useEffect(()=>{
     //tacheExample.setTitle(task.title)
     //console.log(tacheStore.getTaches[0])
@@ -39,6 +48,7 @@ export const SignInScreen = observer(function SignInScreen() {
     //[...tacheStore.getTaches,[]]
     //console.log(tacheStore.getTaches[15])
     //console.log(task)
+    //FetchUsers();
     
   });
   return ( 
@@ -52,7 +62,16 @@ export const SignInScreen = observer(function SignInScreen() {
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-        <Text>hello</Text>
+        <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>FetchUsers()}/>
+        {
+          usersList.map((profil,index)=>{
+            return(
+              <View>
+                <Text>user name : {profil.name}</Text>
+              </View>
+            );
+          })
+        }
         
       </SafeAreaView>
     </Screen>
