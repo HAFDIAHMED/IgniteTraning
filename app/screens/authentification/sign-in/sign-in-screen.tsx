@@ -58,8 +58,9 @@ export const SignInScreen = observer(function SignInScreen() {
    // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
-    profilesStore.getProfile
+    profilesStore.getProfile()
     //console.log(profilesStore)
+   
   });
   return ( 
     <Screen style={ROOT} preset="fixed">

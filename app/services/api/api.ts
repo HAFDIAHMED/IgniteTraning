@@ -102,8 +102,9 @@ export class Api {
 
   async fetchProfils( ): Promise<Types.ProfilesApi> {
     //make api call
-    console.log("from the deeper of api")
+    
       const response : ApiResponse<any>= await this.apisauce.get('/user');
+      //console.log(response.data)
     //the typical ways to die when calling an api
       if(!response.ok){
         const problem =getGeneralApiProblem(response)
