@@ -121,7 +121,7 @@ export class Api {
           name : response.data.name,
           job : response.data.job
         }
-        //console.log(result)
+        console.log(result)
         return {profil : result}
       } catch (error) {
         return  { kind : "bad-data"}

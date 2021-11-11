@@ -49,10 +49,7 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/person") );
   }
-  const Testws=()=>{
-    setUsersList(profilesStore);
-
-  }
+  
   
   useEffect( ()=>{
     profilesStore.getProfile();
