@@ -29,13 +29,16 @@ export const ProfilModel = types
   })) 
   .actions((self)=> ({
       getProfile : flow (function * (){
-        
+       
           const api = new Api()
           api.setup()
+
           yield api.fetchProfils().then((response : any)=>{
             self.setJob(response.job)
+            //console.log(response.job)
             self.setName(response.name)
           })
+          
       })
   })
   )
