@@ -36,7 +36,8 @@ export const SignInScreen = observer(function SignInScreen() {
           const response =await fetch("http://192.168.0.106:3000/user");
           const json = await response.json();
           //setUsersList([])
-          setUsersList(json);
+          console.log(response)
+          //setUsersList(json);
       }catch(error){
         console.error(error)
       }
@@ -48,7 +49,7 @@ export const SignInScreen = observer(function SignInScreen() {
     //[...tacheStore.getTaches,[]]
     //console.log(tacheStore.getTaches[15])
     //console.log(task)
-    //FetchUsers();
+    FetchUsers();
     
   });
   return ( 
