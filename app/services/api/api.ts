@@ -104,7 +104,7 @@ export class Api {
     //make api call
     
       const response : ApiResponse<any>= await this.apisauce.get('/user');
-      //console.log(response.data)
+      
     //the typical ways to die when calling an api
       if(!response.ok){
         const problem =getGeneralApiProblem(response)
@@ -115,8 +115,10 @@ export class Api {
       //transform the data to format json
       try {
         const jsonResponse =response.data;
+        
         const data ={ name : jsonResponse.name, job : jsonResponse.job}
-        return jsonResponse
+        console.log(jsonResponse)
+        return response.data
         //const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
       } catch (error) {
         return  { kind : "bad-data"}
