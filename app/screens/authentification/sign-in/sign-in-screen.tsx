@@ -50,14 +50,13 @@ export const SignInScreen = observer(function SignInScreen() {
     setUsersList( await FetchUsers("/person") );
   }
   const Testws=()=>{
-    const testing= profilesStore.getProfile();
+    const testing= profilesStore;
     setUsersList(testing);
 
   }
   
   useEffect( ()=>{
-    const testing= profilesStore.getProfile();
-   
+    Testws()
     console.log(profilesStore)  
   });
   return ( 
