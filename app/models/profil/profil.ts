@@ -9,7 +9,7 @@ export const ProfilModel = types
   .props({
     
     name : types.optional(types.string,""),
-    job : types.optional(types.string, "j")
+    job : types.optional(types.string, "j"),
   })
   .views((self) => ({
     get getJob (){
@@ -38,8 +38,18 @@ export const ProfilModel = types
             self.setName(response.name)
           })
           
-      })
-      
+      }),
+      getHumans : flow (function * (){
+       
+        const api = new Api()
+        api.setup()
+
+        yield api.FetchHumans().then((response : any)=>{
+          console.log("response")
+        })
+        
+    })
+
   })
   )
   
