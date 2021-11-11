@@ -1,5 +1,7 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import api from "@storybook/addon-storyshots"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
 import { ProfilModel } from ".."
+import { Api } from "../../services/api"
 
 /**
  * Model description here for TypeScript hints.
@@ -10,7 +12,9 @@ export const ProfilStoreModel = types
     profile : types.optional(types.array(ProfilModel),[])
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .actions((self) => ({
+    
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type ProfilStoreType = Instance<typeof ProfilStoreModel>
 export interface ProfilStore extends ProfilStoreType {}
