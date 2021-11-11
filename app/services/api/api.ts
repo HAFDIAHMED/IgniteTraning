@@ -101,7 +101,7 @@ export class Api {
     }
   }
 
-  async fetchProfils( ): Promise<Types.ProfilesApi> {
+  async fetchProfils( ): Promise<Types.ProfiUser> {
     //make api call
     
       const response : ApiResponse<any>= await this.apisauce.get('/user');
@@ -122,7 +122,7 @@ export class Api {
           job : response.data.job
         }
         //console.log(result)
-        return {profil : result}
+        return data
       } catch (error) {
         return  { kind : "bad-data"}
       }

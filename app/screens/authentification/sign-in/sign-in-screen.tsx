@@ -56,8 +56,8 @@ export const SignInScreen = observer(function SignInScreen() {
   }
   
   useEffect( ()=>{
-    Testws()
-    console.log(profilesStore)  
+    
+    //console.log(profilesStore.getJob)  
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
