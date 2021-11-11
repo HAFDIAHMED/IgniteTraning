@@ -33,10 +33,10 @@ export const SignInScreen = observer(function SignInScreen() {
   const [usersList,setUsersList]=useState([]);
   const FetchUsers=async () =>{
       try {
-          const response =await fetch("http://192.168.0.106:3000/user");
+          const response =await fetch("http://192.168.0.106:3000");
           const json = await response.json();
           //setUsersList([])
-          console.log(response)
+          console.log(json.user)
           //setUsersList(json);
       }catch(error){
         console.error(error)
