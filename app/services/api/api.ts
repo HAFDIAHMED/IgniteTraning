@@ -114,7 +114,7 @@ export class Api {
       //transform the data to format json
       try {
         const jsonResponse =response.data.json();
-        return jsonResponse;
+        //return jsonResponse;
         const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
       } catch (error) {
         return error;
