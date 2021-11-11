@@ -107,15 +107,17 @@ export class Api {
     //the typical ways to die when calling an api
       if(!response.ok){
         const problem =getGeneralApiProblem(response)
-        if(problem) return problem
+        if(problem) {
+          return problem
+        }
       }
       //transform the data to format json
       try {
         const jsonResponse =response.data.json();
         return jsonResponse;
         const data ={ status :200,name : jsonResponse.name,id:jsonResponse.id};
-      } catch {
-        return { kind: "bad-data" }
+      } catch (error) {
+        return error;
       }
   }
 }
