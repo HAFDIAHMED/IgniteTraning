@@ -2,7 +2,6 @@ import { ApisauceInstance, create, ApiResponse } from "apisauce"
 import { getGeneralApiProblem } from "./api-problem"
 import { ApiConfig, DEFAULT_API_CONFIG } from "./api-config"
 import * as Types from "./api.types"
-import { useState } from "react"
 
 /**
  * Manages all requests to the API.
@@ -116,9 +115,12 @@ export class Api {
       try {
         const jsonResponse =response.data;
         const data ={ name : response.data.name, job : response.data.job}
-        console.log(response.data)
-
-        return { name : jsonResponse.name, job : jsonResponse.job}
+        //console.log(response.data)
+        const resultsProfile = Types.ProfileTest = {
+              name : response.data.name ,
+              job : response.data.job
+        } 
+        return  {kind : "ok",resultsProfile}
       } catch (error) {
         return  { kind : "bad-data"}
       }
