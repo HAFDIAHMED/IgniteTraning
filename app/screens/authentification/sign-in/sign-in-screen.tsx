@@ -30,7 +30,7 @@ export const SignInScreen = observer(function SignInScreen() {
     userName : "ahmed",
     userPassword :"1111",
   });
-  const [usersList,setUsersList]=useState();
+  const [usersList,setUsersList]=useState([]);
   const [ProfilList,setProfilList]=useState([]);
   const FetchUsers=async (url_user) =>{
       try {
@@ -39,7 +39,7 @@ export const SignInScreen = observer(function SignInScreen() {
           //console.log(json)
           //setUsersList([])
           //setUsersList(json);
-          console.log(json)
+          console.log(json.name)
           return json;
       }catch(error){
         console.error(error)
@@ -47,25 +47,14 @@ export const SignInScreen = observer(function SignInScreen() {
       
   }
   const Get=async ()=>{
-    setUsersList( await FetchUsers("/user") );
+    setUsersList( await FetchUsers("/person") );
   }
   const Get2=async ()=>{
     setProfilList( await profilesStore.getProfile())  }
   
   useEffect( ()=>{
-    //tacheExample.setTitle(task.title)
-    //console.log(tacheStore.getTaches[0])
-    //console.log(tacheExample.getTitle)
-    //[...tacheStore.getTaches,[]]
-    //console.log(tacheStore.getTaches[15])
-    //console.log(task)
-   // setUsersList( await FetchUsers("/user") );
-    //console.log(usersList)
-    //setUsersList(await fetchProfile)
-    console.log(profilesStore.getProfile())
-    
    
-   
+    console.log(profilesStore.getProfile())   
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -88,17 +77,8 @@ export const SignInScreen = observer(function SignInScreen() {
             );
           })
         }
-      <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch profiles" onPress={()=>Get2()}/>
 
-          {
-          ProfilList.map((userjson,index)=>{
-            return(
-              <View>
-                <Text key={index}>user name : {userjson.name}</Text>
-              </View>
-            );
-          })
-        }
+         
         
       </SafeAreaView>
     </Screen>
