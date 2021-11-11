@@ -35,6 +35,7 @@ export const SignInScreen = observer(function SignInScreen() {
       try {
           const response =await fetch("http://192.168.0.106:3000"+url_user);
           const json = await response.json();
+          //console.log(json)
           //setUsersList([])
           //setUsersList(json);
           //console.log(json)
