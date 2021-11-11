@@ -1,4 +1,5 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
+import { Api } from "../../services/api"
 
 /**
  * Model description here for TypeScript hints.
@@ -24,7 +25,21 @@ export const ProfilModel = types
     setName (value : string){
       self.name=value
     }
-  })) // eslint-disable-line @typescript-eslint/no-unused-vars
+  })) 
+  .actions((self)=>({
+    getProfile : flow ( function * () {
+      const api =new Api()
+      yield api.fetchProfils().then((jsonrespone : any)=>{
+        self.setId(jsonrespone.id)
+        self.setName(jsonrespone.name)
+      })
+
+    })
+
+  }))
+   
+  
+  // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type ProfilType = Instance<typeof ProfilModel>
 export interface Profil extends ProfilType {}

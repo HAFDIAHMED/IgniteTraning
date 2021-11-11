@@ -24,7 +24,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {Users}=ProfileStore;
   //const {tacheStore}=useStores()
   //const {taches}=tacheStore
-  
+  const {profilesStore}=useStores();
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
     userName : "ahmed",
@@ -57,7 +57,6 @@ export const SignInScreen = observer(function SignInScreen() {
    // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
-    
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
