@@ -57,6 +57,7 @@ export const SignInScreen = observer(function SignInScreen() {
   
   useEffect( ()=>{
     console.log("hello")
+    profilesStore.getProfile();
     console.log(profilesStore)  
   });
   return ( 
