@@ -2,6 +2,7 @@ import { ApisauceInstance, create, ApiResponse } from "apisauce"
 import { getGeneralApiProblem } from "./api-problem"
 import { ApiConfig, DEFAULT_API_CONFIG } from "./api-config"
 import * as Types from "./api.types"
+import { tsImportEqualsDeclaration } from "@babel/types"
 
 /**
  * Manages all requests to the API.
@@ -98,5 +99,19 @@ export class Api {
     } catch {
       return { kind: "bad-data" }
     }
+  }
+
+  async fetchProfils( ): Promise<Types.ProfilesApi> {
+    //make api call
+      const response : ApiResponse<any>= await this.apisauce.get("/user");
+    //the typical ways to die when calling an api
+      if(!response.ok){
+        const problem =getGeneralApiProblem(response)
+        if(problem) return problem
+      }
+      //transform the data to format json
+      try {
+        const jsonResponse =response.json()
+      }
   }
 }
