@@ -23,24 +23,10 @@
   ],
   "user": [
     {
-      "id": 1,
-      "name": "ahmed 1"
-    },
-    {
-      "id": 2,
-      "name": "ahmed 2"
-    },
-    {
-      "id": 3,
-      "name": "ahmed 3"
-    },
-    {
-      "id": 4,
-      "name": "ahmed 4"
-    },
-    {
-      "id": 5,
-      "name": "ahmed 5"
+      
+      "name": "ahmed ",
+      "job" : "job "
     }
+    
   ]
 }
