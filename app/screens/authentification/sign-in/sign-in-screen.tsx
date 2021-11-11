@@ -49,10 +49,16 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/person") );
   }
-  
+  const Testws=()=>{
+    const testing= profilesStore.getProfile();
+    setUsersList(testing);
+
+  }
   
   useEffect( ()=>{
-    console.log(profilesStore.getProfile())  
+    //const testing= profilesStore.getProfile();
+   
+    //console.log(testing)  
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
