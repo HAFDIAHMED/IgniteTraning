@@ -53,7 +53,7 @@ export const SignInScreen = observer(function SignInScreen() {
   
   useEffect( ()=>{
     profilesStore.getProfile();
-    console.log(profilesStore)  
+    //console.log(profilesStore)  
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -67,8 +67,9 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
-      
-     
+        <Text>{profilesStore.getJob}</Text>
+        <Text>{profilesStore.getName}</Text>
+
          
         
       </SafeAreaView>
