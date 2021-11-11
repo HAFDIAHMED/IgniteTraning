@@ -36,20 +36,24 @@ export const SignInScreen = observer(function SignInScreen() {
           const response =await fetch("http://192.168.0.106:3000"+url_user);
           const json = await response.json();
           //setUsersList([])
-          setUsersList(json);
+          //setUsersList(json);
           //console.log(json)
+          return json;
       }catch(error){
         console.error(error)
       }
+      
   }
-  useEffect(()=>{
+  useEffect(async ()=>{
     //tacheExample.setTitle(task.title)
     //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
     //[...tacheStore.getTaches,[]]
     //console.log(tacheStore.getTaches[15])
     //console.log(task)
-    //FetchUsers("/user");
+    //setUsersList( await FetchUsers("/user") );
+    //console.log(usersList)
+    //setUsersList(await fetchProfile)
     
   });
   return ( 
