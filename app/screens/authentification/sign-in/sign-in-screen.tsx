@@ -51,7 +51,7 @@ export const SignInScreen = observer(function SignInScreen() {
     //[...tacheStore.getTaches,[]]
     //console.log(tacheStore.getTaches[15])
     //console.log(task)
-    //setUsersList( await FetchUsers("/user") );
+    setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
     
