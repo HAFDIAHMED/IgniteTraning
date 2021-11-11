@@ -116,7 +116,7 @@ export class Api {
         const jsonResponse =response.data;
         const data ={ name : response.data.name, job : response.data.job}
         //console.log(response.data)
-        const resultsProfile = Types.ProfileTest = {
+        const resultsProfile = Types.User = {
               name : response.data.name ,
               job : response.data.job
         } 

@@ -11,7 +11,7 @@ export const RootStoreModel = types.model("RootStore").props({
    //ProfileStore : types.optional(UserStoreModel,{} )
    //tacheStore : types.optional(TacheStoreModel,{}),
   //tacheExample : types.optional(TacheModel,{})
-  profilesStore : types.optional(ProfilModel,{}as any),
+ profilesStore : types.optional(ProfilModel,{}as any),
 })
 
 /**
