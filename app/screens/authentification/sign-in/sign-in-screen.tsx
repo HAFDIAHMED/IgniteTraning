@@ -68,7 +68,7 @@ export const SignInScreen = observer(function SignInScreen() {
           usersList.map((profil,index)=>{
             return(
               <View>
-                <Text>user name : {profil.name}</Text>
+                <Text key={index}>user name : {profil.name}</Text>
               </View>
             );
           })
