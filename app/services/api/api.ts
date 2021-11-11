@@ -3,6 +3,7 @@ import { getGeneralApiProblem } from "./api-problem"
 import { ApiConfig, DEFAULT_API_CONFIG } from "./api-config"
 import * as Types from "./api.types"
 import { useState } from "react"
+import { ProfilModel } from "../../models"
 
 /**
  * Manages all requests to the API.
@@ -127,5 +128,20 @@ export class Api {
         return  { kind : "bad-data"}
       }
 
+  }
+  async FetchHumans () :Promise<Types.HumansApi>{
+    const response : ApiResponse<any> =await this.apisauce.get("/humans");
+    if (!response.ok) {
+      const problem = getGeneralApiProblem(response)
+      if (problem) return problem
+    }
+    try {
+      const people=response.data
+      return {
+        hommes: people.map(hum=>ProfilModel.create({ name : hum.name , job : hum.job}) )
+      }
+    }catch (error){
+      return (error)
+    }
   }
 }
