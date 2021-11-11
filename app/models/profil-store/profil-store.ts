@@ -12,8 +12,7 @@ export const ProfilStoreModel = types
     profile : types.optional(types.array(ProfilModel),[])
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((self) => ({
-    
+  .actions((self)=>({  
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type ProfilStoreType = Instance<typeof ProfilStoreModel>

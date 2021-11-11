@@ -26,17 +26,7 @@ export const ProfilModel = types
       self.name=value
     }
   })) 
-  .actions((self)=>({
-    getProfile : flow ( function * () {
-      const api =new Api()
-      yield api.fetchProfils().then((jsonrespone : any)=>{
-        self.setId(jsonrespone.id)
-        self.setName(jsonrespone.name)
-      })
-
-    })
-
-  }))
+  
    
   
   // eslint-disable-line @typescript-eslint/no-unused-vars
