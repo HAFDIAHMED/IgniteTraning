@@ -8,8 +8,8 @@ export const ProfilModel = types
   .model("Profil")
   .props({
     
-    name : types.optional(types.string, "name 1"),
-    job : types.optional(types.string, "job  1")
+    name : types.optional(types.string,""),
+    job : types.optional(types.string, "j")
   })
   .views((self) => ({
     get getJob (){
