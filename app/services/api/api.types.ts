@@ -12,6 +12,6 @@ export interface ProfileTest {
 
 export type GetUsersResult = { kind: "ok"; users: User[] } | GeneralApiProblem
 export type GetUserResult = { kind: "ok"; user: User } | GeneralApiProblem
-export type ProfilesApi={ kind : "ok"; profil : ProfileTest} | GeneralApiProblem
+export type ProfilesApi={ profil : ProfileTest} | GeneralApiProblem
 export type GetCharactersResult = { kind: "ok"; characters: Character[] } | GeneralApiProblem
 export type GetCharacterResult = { kind: "ok"; character: Character } | GeneralApiProblem
