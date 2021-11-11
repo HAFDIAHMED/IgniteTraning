@@ -44,14 +44,17 @@ export const SignInScreen = observer(function SignInScreen() {
       }
       
   }
-  useEffect(async ()=>{
+  const Get=async ()=>{
+    setUsersList( await FetchUsers("/user") );
+  }
+  useEffect( ()=>{
     //tacheExample.setTitle(task.title)
     //console.log(tacheStore.getTaches[0])
     //console.log(tacheExample.getTitle)
     //[...tacheStore.getTaches,[]]
     //console.log(tacheStore.getTaches[15])
     //console.log(task)
-    setUsersList( await FetchUsers("/user") );
+   // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
     
@@ -67,7 +70,7 @@ export const SignInScreen = observer(function SignInScreen() {
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-        <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>FetchUsers("/user")}/>
+        <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
         {
           usersList.map((profil,index)=>{
             return(

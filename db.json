@@ -1,43 +1,46 @@
 {
-    "person": [
-      {
-        "id": 1,
-        "name": "AHMED HAFDI",
-        "age": "23",
-        "job": "software engineer",
-        "email": "ahmed@gmail.com",
-        "phone": "066666666",
-        "Adresse": "no where",
-        "image" : "https://avatars.githubusercontent.com/u/58536023?s=400&u=8c34c3af02b96b4bb206ea6f2aae460cad938d6a&v=4"
-      },
-      {
-        "id": 2,
-        "name": "jhon user",
-        "age": "23",
-        "job": "software engineer",
-        "email": "jhon@gmail.com",
-        "phone": "066666666",
-        "Adresse": "no where",
-        "image" : "https://pbs.twimg.com/profile_images/429442426038538240/6Ac9kykG_400x400.jpeg"
-  
-      }
-    ],
-    "user" : [
-            {
-                "id": 1,
-                "name" :"ahmed 1"
-            },
-            {
-                "id": 2,
-                "name" :"ahmed 2"
-            },
-            {
-                "id": 3,
-                "name" :"ahmed 3"
-            },
-            {
-              "id": 4,
-              "name" :"ahmed 4"
-          }
-    ]
-  }
+  "person": [
+    {
+      "id": 1,
+      "name": "AHMED HAFDI",
+      "age": "23",
+      "job": "software engineer",
+      "email": "ahmed@gmail.com",
+      "phone": "066666666",
+      "Adresse": "no where",
+      "image": "https://avatars.githubusercontent.com/u/58536023?s=400&u=8c34c3af02b96b4bb206ea6f2aae460cad938d6a&v=4"
+    },
+    {
+      "id": 2,
+      "name": "jhon user",
+      "age": "23",
+      "job": "software engineer",
+      "email": "jhon@gmail.com",
+      "phone": "066666666",
+      "Adresse": "no where",
+      "image": "https://pbs.twimg.com/profile_images/429442426038538240/6Ac9kykG_400x400.jpeg"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "ahmed 1"
+    },
+    {
+      "id": 2,
+      "name": "ahmed 2"
+    },
+    {
+      "id": 3,
+      "name": "ahmed 3"
+    },
+    {
+      "id": 4,
+      "name": "ahmed 4"
+    },
+    {
+      "id": 5,
+      "name": "ahmed 5"
+    }
+  ]
+}
