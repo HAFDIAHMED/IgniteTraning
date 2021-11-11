@@ -58,7 +58,9 @@ export const SignInScreen = observer(function SignInScreen() {
    // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
-    profilesStore.getProfile()
+    const fetching = profilesStore.getProfile()
+    console.log(profilesStore.getProfile())
+    console.log('hello')
     //console.log(profilesStore)
    
   });
