@@ -7,25 +7,32 @@ import { Api } from "../../services/api"
 export const ProfilModel = types
   .model("Profil")
   .props({
-    id : types.optional(types.identifierNumber,0),
-    name : types.optional(types.string, "name ")
+    
+    name : types.optional(types.string, "name "),
+    job : types.optional(types.string, "job ")
   })
   .views((self) => ({
-    get getId (){
-      return self.id
+    get getJob (){
+      return self.job
     },
     get getName (){
       return self.name
     }
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
-    setId( value : number){
-      self.id=value
+    setJob( value : string){
+      self.job=value
     },
     setName (value : string){
       self.name=value
     }
   })) 
+  .actions((self)=> ({
+      fetchProfile : flow (function * (){
+            
+      })
+  })
+  )
   
    
   
