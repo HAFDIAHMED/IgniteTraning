@@ -62,7 +62,8 @@ export const SignInScreen = observer(function SignInScreen() {
    // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
-    //profilesStore.getProfile()
+    console.log(profilesStore.getProfile())
+    
    
    
   });
@@ -90,10 +91,10 @@ export const SignInScreen = observer(function SignInScreen() {
       <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch profiles" onPress={()=>Get2()}/>
 
           {
-          ProfilList.map((profil,index)=>{
+          ProfilList.map((userjson,index)=>{
             return(
               <View>
-                <Text key={index}>user name : {profil.name}</Text>
+                <Text key={index}>user name : {userjson.name}</Text>
               </View>
             );
           })
