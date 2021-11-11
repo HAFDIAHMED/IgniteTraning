@@ -115,8 +115,8 @@ export class Api {
       //transform the data to format json
       try {
         const jsonResponse =response.data;
-        const data ={ name : jsonResponse.name, job : jsonResponse.job}
-        console.log(data)
+        const data ={ name : response.data.name, job : response.data.job}
+        console.log(jsonResponse.name)
 
         return { name : jsonResponse.name, job : jsonResponse.job}
       } catch (error) {
