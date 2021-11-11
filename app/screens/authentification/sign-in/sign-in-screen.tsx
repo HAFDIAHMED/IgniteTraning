@@ -31,6 +31,7 @@ export const SignInScreen = observer(function SignInScreen() {
     userPassword :"1111",
   });
   const [usersList,setUsersList]=useState([]);
+  const [ProfilList,setProfilList]=useState([]);
   const FetchUsers=async (url_user) =>{
       try {
           const response =await fetch("http://192.168.0.106:3000"+url_user);
@@ -48,6 +49,8 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/user") );
   }
+  const Get2=async ()=>{
+    setProfilList( await profilesStore.getProfile())  }
   
   useEffect( ()=>{
     //tacheExample.setTitle(task.title)
@@ -59,7 +62,8 @@ export const SignInScreen = observer(function SignInScreen() {
    // setUsersList( await FetchUsers("/user") );
     //console.log(usersList)
     //setUsersList(await fetchProfile)
-    profilesStore.getProfile()
+    //profilesStore.getProfile()
+   
    
   });
   return ( 
@@ -76,6 +80,17 @@ export const SignInScreen = observer(function SignInScreen() {
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
         {
           usersList.map((profil,index)=>{
+            return(
+              <View>
+                <Text key={index}>user name : {profil.name}</Text>
+              </View>
+            );
+          })
+        }
+      <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch profiles" onPress={()=>Get2()}/>
+
+          {
+          ProfilList.map((profil,index)=>{
             return(
               <View>
                 <Text key={index}>user name : {profil.name}</Text>
