@@ -109,9 +109,8 @@ export class Api {
     //the typical ways to die when calling an api
       if(!response.ok){
         const problem =getGeneralApiProblem(response)
-        if(problem) {
-          return problem
-        }
+        if(problem)  return problem
+        
       }
       //transform the data to format json
       try {
