@@ -38,17 +38,7 @@ export const ProfilModel = types
             self.setName(response.name)
           })
           
-      }),
-      getHumans : flow (function * (){
-       
-        const api = new Api()
-        api.setup()
-
-        yield api.FetchHumans().then((response : any)=>{
-          console.log("response")
-        })
-        
-    })
+      })
 
   })
   )

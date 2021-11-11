@@ -1,5 +1,5 @@
 import { Instance, SnapshotOut, types } from "mobx-state-tree"
-import { ProfilModel, TacheModel, TacheStore, TacheStoreModel, UserModel, UserStore, UserStoreModel } from ".."
+import { ProfilModel, ProfilStoreModel, TacheModel, TacheStore, TacheStoreModel, UserModel, UserStore, UserStoreModel } from ".."
 import { CharacterStoreModel } from "../character-store/character-store"
 
 /**
@@ -12,6 +12,7 @@ export const RootStoreModel = types.model("RootStore").props({
    //tacheStore : types.optional(TacheStoreModel,{}),
   //tacheExample : types.optional(TacheModel,{})
   profilesStore : types.optional(ProfilModel,{}as any),
+  HumanStore : types.optional(ProfilStoreModel,{} as any)
 })
 
 /**

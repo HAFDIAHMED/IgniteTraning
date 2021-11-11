@@ -12,7 +12,17 @@ export const ProfilStoreModel = types
     profile : types.optional(types.array(ProfilModel),[])
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
-  .actions((self)=>({ 
+  .actions((self)=>({
+    getHumans : flow (function * (){
+       
+      const api = new Api()
+      api.setup()
+
+      yield api.FetchHumans().then((response : any)=>{
+        console.log(response)
+      })
+      
+  })
     
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
 
