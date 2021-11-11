@@ -116,9 +116,13 @@ export class Api {
       try {
         const jsonResponse =response.data;
         const data ={ name : jsonResponse.name, job : jsonResponse.job}
-        console.log(response.duration)
-
-        return data
+        
+        const result : Types.ProfileTest = {
+          name : response.data.name,
+          job : response.data.job
+        }
+        console.log(result.job)
+        return {kind : "ok", profil : result}
       } catch (error) {
         return  { kind : "bad-data"}
       }

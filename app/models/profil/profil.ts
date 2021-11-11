@@ -35,7 +35,6 @@ export const ProfilModel = types
 
           yield api.fetchProfils().then((response : any)=>{
             self.setJob(response.job)
-            //console.log(response.job)
             self.setName(response.name)
           })
           
