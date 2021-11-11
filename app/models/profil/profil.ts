@@ -8,8 +8,8 @@ export const ProfilModel = types
   .model("Profil")
   .props({
     
-    name : types.optional(types.string, "name "),
-    job : types.optional(types.string, "job ")
+    name : types.optional(types.string, "name 1"),
+    job : types.optional(types.string, "job  1")
   })
   .views((self) => ({
     get getJob (){
@@ -29,6 +29,7 @@ export const ProfilModel = types
   })) 
   .actions((self)=> ({
       getProfile : flow (function * (){
+        
           const api = new Api()
           api.setup()
           yield api.fetchProfils().then((response : any)=>{
