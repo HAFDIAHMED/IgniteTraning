@@ -167,7 +167,7 @@ export class Api {
       if (problem) return problem
     }
     try {
-      console.log("response")
+      console.log("hello")
         const productsResponse = response.data
         /*return { products: productsResponse.map(prod=>ProductModel.create({
           id : prod.id,

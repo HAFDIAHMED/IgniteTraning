@@ -25,7 +25,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {tacheStore}=useStores()
   //const {taches}=tacheStore
  // const {profilesStore, HumanStore}=useStores();
-  const {utilisateurstore}=useStores()
+  //const {utilisateurstore}=useStores()
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
     email : "ahmed",
@@ -68,8 +68,8 @@ export const SignInScreen = observer(function SignInScreen() {
    //utilisateurstore.login("nilson@email.com","nilson")
    //console.log(utilisateurstore.email)
     //TestApi();
-  utilisateurstore.GetProd(utilisateurstore.getToken)
-  console.log(utilisateurstore.products)
+  //console.log(utilisateurstore.GetProd(utilisateurstore.getToken))
+  
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -87,7 +87,8 @@ export const SignInScreen = observer(function SignInScreen() {
             email:userName.email,
             password:userName.password
           })
-          utilisateurstore.login(userName.email,userName.password)}}
+         // utilisateurstore.login(userName.email,userName.password)
+        }}
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />

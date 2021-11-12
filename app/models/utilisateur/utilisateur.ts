@@ -65,7 +65,7 @@ export const UtilisateurModel = types
       const api= new Api()
       api.setup()
       yield api.getUtilisateurProd(token).then((response: any)=>{
-        console.log(response)
+        console.log("response")
         //self.setProducts(response)
       })
     })
