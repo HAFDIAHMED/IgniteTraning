@@ -10,7 +10,8 @@ export const UtilisateurModel = types
     name : types.optional(types.string,"ahmed"),
     email : types.optional(types.string,"ahmed@gmail.com"),
     token : types.optional(types.string,"token3939393939"),
-    password : types.optional(types.string,"1111")
+    password : types.optional(types.string,"1111"),
+    //products : types.optional(types.array(""),[])
   })
   .views((self) => ({
    get  getName ( ){
