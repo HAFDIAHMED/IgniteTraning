@@ -168,14 +168,14 @@ export class Api {
     }
     try {
         const productsResponse = response.data
-        return { products: productsResponse.map(prod=>ProductModel.create({
+        /*return { products: productsResponse.map(prod=>ProductModel.create({
           id : prod.id,
           name : prod.name,
           cost : prod.cost,
           quantity: prod.quantity,
           location: prod.location,
           familyId : prod.familyId,
-        }))}
+        }))} */
     }catch(error){
       return { kind : "bad-data"}
     }
