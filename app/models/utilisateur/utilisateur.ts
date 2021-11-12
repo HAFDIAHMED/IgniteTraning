@@ -1,4 +1,5 @@
 import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
+import { ProductModel } from ".."
 import { Api } from "../../services/api"
 
 /**
@@ -11,7 +12,7 @@ export const UtilisateurModel = types
     email : types.optional(types.string,"ahmed@gmail.com"),
     token : types.optional(types.string,"token3939393939"),
     password : types.optional(types.string,"1111"),
-    //products : types.optional(types.array(""),[])
+    products : types.optional(types.array(ProductModel),[])
   })
   .views((self) => ({
    get  getName ( ){
