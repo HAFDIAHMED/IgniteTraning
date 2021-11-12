@@ -68,7 +68,7 @@ export const SignInScreen = observer(function SignInScreen() {
    //utilisateurstore.login("nilson@email.com","nilson")
    //console.log(utilisateurstore.email)
     //TestApi();
-    console.log(utilisateurstore.getToken)
+    console.log(utilisateurstore.products)
   });
   return ( 
     <Screen style={ROOT} preset="fixed">

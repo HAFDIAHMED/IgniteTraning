@@ -26,6 +26,9 @@ export const UtilisateurModel = types
    },
    get getPassword(){
      return self.password
+   },
+   get getProducts (){
+     return self.products
    }
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
@@ -40,6 +43,9 @@ export const UtilisateurModel = types
     },
     setPassword (value : string ){
       self.password=value
+    },
+    setProducts (value : any){
+      self.products=value
     }
 
 

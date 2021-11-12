@@ -3,7 +3,7 @@ import { getGeneralApiProblem } from "./api-problem"
 import { ApiConfig, DEFAULT_API_CONFIG } from "./api-config"
 import * as Types from "./api.types"
 import { useState } from "react"
-import { ProfilModel } from "../../models"
+import { ProductModel, ProfilModel } from "../../models"
 
 /**
  * Manages all requests to the API.
@@ -168,6 +168,14 @@ export class Api {
     }
     try {
         const productsResponse = response.data
+        return { products: productsResponse.map(prod=>ProductModel.create({
+          id : prod.id,
+          name : prod.name,
+          cost : prod.cost,
+          quantity: prod.quantity,
+          location: prod.location,
+          familyId : prod.familyId,
+        }))}
     }catch(error){
       return { kind : "bad-data"}
     }
