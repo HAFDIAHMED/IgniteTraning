@@ -42,7 +42,7 @@ const AppStack = () => {
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName="signin"
+      initialRouteName="userProfile"
     >
       <Stack.Screen name="signin" component={SignInScreen} />
       <Stack.Screen name="signup" component={SignUpScreen} />
@@ -82,5 +82,5 @@ AppNavigator.displayName = "AppNavigator"
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ["signin"]
+const exitRoutes = ["userProfile"]
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)
