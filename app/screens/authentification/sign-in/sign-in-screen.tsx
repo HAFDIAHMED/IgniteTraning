@@ -56,8 +56,8 @@ export const SignInScreen = observer(function SignInScreen() {
   //profilesStore.getProfile();
     //console.log(profilesStore)  
    //HumanStore.getHumans()
-   //utilisateurstore.setToken("hhh")
-   console.log(utilisateurstore)
+   utilisateurstore.setPassword("bamir")
+   console.log(utilisateurstore.getPassword)
 
   });
   return ( 

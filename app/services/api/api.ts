@@ -144,5 +144,7 @@ export class Api {
       return (error)
     }
   }
-  
+  /*async Login ():Promise<Types.LoginApiResponse>{
+    const response :ApiResponse<any> =await this.apisauce.get("")
+  } */
 }

@@ -9,6 +9,7 @@ export const UtilisateurModel = types
     name : types.optional(types.string,"ahmed"),
     email : types.optional(types.string,"ahmed@gmail.com"),
     token : types.optional(types.string,"token3939393939"),
+    password : types.optional(types.string,"1111")
   })
   .views((self) => ({
    get  getName ( ){
@@ -19,6 +20,9 @@ export const UtilisateurModel = types
    },
    get getToken(){
      return self.token
+   },
+   get getPassword(){
+     return self.password
    }
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
@@ -30,6 +34,9 @@ export const UtilisateurModel = types
     },
     setToken (value : string){
       self.token=value
+    },
+    setPassword (value : string ){
+      self.password=value
     }
 
 
