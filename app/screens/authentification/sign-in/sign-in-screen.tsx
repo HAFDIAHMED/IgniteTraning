@@ -53,9 +53,9 @@ export const SignInScreen = observer(function SignInScreen() {
   
   
   useEffect( ()=>{
-  //profilesStore.getProfile();
-    //console.log(profilesStore)  
-   HumanStore.getHumans()
+  profilesStore.getProfile();
+    console.log(profilesStore)  
+   //HumanStore.getHumans()
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -69,8 +69,8 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
-       {/* <Text>{profilesStore.getJob}</Text>
-        <Text>{profilesStore.getName}</Text> */}
+        <Text>{profilesStore.getJob}</Text>
+        <Text>{profilesStore.getName}</Text> 
 
          
         
