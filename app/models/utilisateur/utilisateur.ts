@@ -12,6 +12,15 @@ export const UtilisateurModel = types
   })
   .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
+    setName (value : string){
+      self.name=value
+    },
+    setEmail (value : string){
+      self.email=value
+    },
+    setToken (value : string){
+      self.token=value
+    }
 
 
   })) // eslint-disable-line @typescript-eslint/no-unused-vars
