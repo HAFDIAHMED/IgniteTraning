@@ -28,8 +28,8 @@ export const SignInScreen = observer(function SignInScreen() {
   const {utilisateurstore}=useStores()
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
-    userName : "ahmed",
-    userPassword :"1111",
+    email : "ahmed",
+    password :"1111",
   });
   const [usersList,setUsersList]=useState({});
   const [ProfilList,setProfilList]=useState([]);
@@ -65,23 +65,28 @@ export const SignInScreen = observer(function SignInScreen() {
     //console.log(profilesStore)  
    //HumanStore.getHumans()
    //utilisateurstore.setPassword("bamir")
-   console.log(utilisateurstore.login("nilson@email.com","nilson"))
+   //utilisateurstore.login("nilson@email.com","nilson")
+   //console.log(utilisateurstore.email)
     //TestApi();
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
       <SafeAreaView >
-         <AuthInput textinput="Enter a task" 
-          onChangeText={(text)=>setTask({title:text})} 
+         <AuthInput textinput="email" 
+          onChangeText={(text)=>userName.email=text} 
           style={AuthenStyle}  
         />
-        <Button  text ="Add Task" onPress={()=>{ console.log("hello")}}
+        <AuthInput textinput="password" 
+          onChangeText={(text)=>userName.password=text} 
+          style={AuthenStyle}  
+        />
+        <Button  text ="login" onPress={()=>{ 
+          
+          utilisateurstore.login()}}
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
-        <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
-       {/* <Text>{profilesStore.getJob}</Text>
-        <Text>{profilesStore.getName}</Text> */}
+       
 
          
         

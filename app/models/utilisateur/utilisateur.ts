@@ -49,7 +49,7 @@ export const UtilisateurModel = types
       api.setup()
       yield api.Login(email, password).then((response : any)=>{
         //console.log(response)
-        
+        self.setToken(response.token)
       })
     }
     )
