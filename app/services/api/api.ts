@@ -137,9 +137,9 @@ export class Api {
     }
     try {
       const people=response.data
-      return {
+      /*return {
         hommes: people.map(hum=>ProfilModel.create({ name : hum.name , job : hum.job}) )
-      }
+      } */
     }catch (error){
       return (error)
     }
