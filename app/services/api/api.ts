@@ -146,15 +146,14 @@ export class Api {
   }
   async Login (email : string , password : string):Promise<Types.LoginApiResponse>{
     const data = {email , password}
-    const response :ApiResponse<any> =await this.apisauce.get("/auth/login");
+    const response :ApiResponse<any> =await this.apisauce.post("/auth/login",data);
     if (!response.ok) {
       const problem = getGeneralApiProblem(response)
       if (problem) return problem
     }
     try {
       const utilisateurGet=response.data
-      console.log(response)
-      return {status : 200,token :"token" }
+      return {token :"token" }
     }catch(error){
       return error
     }
