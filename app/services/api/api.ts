@@ -154,7 +154,7 @@ export class Api {
     }
     try {
       const utilisateurGet=response.data
-      return {token :utilisateurGet.access_token }
+      return {token :utilisateurGet.access_token}
     }catch(error){
       return error
     }

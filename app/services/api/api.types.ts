@@ -16,6 +16,6 @@ export type GetUserResult = { kind: "ok"; user: User } | GeneralApiProblem
 export type ProfilesApi={ profil : ProfileTest} | GeneralApiProblem
 export type ProfiUser = {name : string, job : string } | GeneralApiProblem
 export type HumansApi = {hommes : any } | GeneralApiProblem
-export type LoginApiResponse = {token : string  } | GeneralApiProblem
+export type LoginApiResponse = { token : string  } | GeneralApiProblem
 export type GetCharactersResult = { kind: "ok"; characters: Character[] } | GeneralApiProblem
 export type GetCharacterResult = { kind: "ok"; character: Character } | GeneralApiProblem

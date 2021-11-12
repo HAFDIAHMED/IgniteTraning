@@ -68,6 +68,7 @@ export const SignInScreen = observer(function SignInScreen() {
    //utilisateurstore.login("nilson@email.com","nilson")
    //console.log(utilisateurstore.email)
     //TestApi();
+    console.log(utilisateurstore.getToken)
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -81,8 +82,11 @@ export const SignInScreen = observer(function SignInScreen() {
           style={AuthenStyle}  
         />
         <Button  text ="login" onPress={()=>{ 
-          
-          utilisateurstore.login()}}
+          setUserName({
+            email:userName.email,
+            password:userName.password
+          })
+          utilisateurstore.login(userName.email,userName.password)}}
           style={BUTTON_SIGNIN}
           textStyle={BUTTON_TEXT}
         />
