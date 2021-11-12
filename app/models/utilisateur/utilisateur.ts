@@ -10,7 +10,17 @@ export const UtilisateurModel = types
     email : types.optional(types.string,"ahmed@gmail.com"),
     token : types.optional(types.string,"token3939393939"),
   })
-  .views((self) => ({})) // eslint-disable-line @typescript-eslint/no-unused-vars
+  .views((self) => ({
+   get  getName ( ){
+      return self.name
+    },
+   get getEmail (){
+     return self.email
+   },
+   get getToken(){
+     return self.token
+   }
+  })) // eslint-disable-line @typescript-eslint/no-unused-vars
   .actions((self) => ({
     setName (value : string){
       self.name=value

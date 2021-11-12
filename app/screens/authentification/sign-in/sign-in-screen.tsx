@@ -56,7 +56,9 @@ export const SignInScreen = observer(function SignInScreen() {
   //profilesStore.getProfile();
     //console.log(profilesStore)  
    //HumanStore.getHumans()
-   console.log(utilisateurstore.email)
+   //utilisateurstore.setToken("hhh")
+   console.log(utilisateurstore)
+
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
