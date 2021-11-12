@@ -65,7 +65,7 @@ export const SignInScreen = observer(function SignInScreen() {
     //console.log(profilesStore)  
    //HumanStore.getHumans()
    //utilisateurstore.setPassword("bamir")
-   console.log(utilisateurstore.login("nilson@email.com","nilsod"))
+   console.log(utilisateurstore.login("nilson@email.com","nilson"))
     //TestApi();
   });
   return ( 
