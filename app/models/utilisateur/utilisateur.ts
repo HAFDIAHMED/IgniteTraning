@@ -48,6 +48,8 @@ export const UtilisateurModel = types
       const api = new Api()
       api.setup()
       yield api.Login(email, password).then((response : any)=>{
+
+        //console.log(response)
         if (response.status===200){
           self.setToken(response.token)
         }
