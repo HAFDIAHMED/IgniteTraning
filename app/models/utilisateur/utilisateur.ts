@@ -43,13 +43,13 @@ export const UtilisateurModel = types
 
   }))
   .actions((self)=>({
-    login : flow(function * (email : string , password : string)
+    login : flow(function * (email1 : string , password1 : string)
     {
       const api = new Api()
       api.setup()
-      yield api.Login(email, password).then((response : any)=>{
+      yield api.Login(email1, password1).then((response : any)=>{
 
-        //console.log(response)
+        console.log("response")
         if (response.status===200){
           self.setToken(response.token)
         }
