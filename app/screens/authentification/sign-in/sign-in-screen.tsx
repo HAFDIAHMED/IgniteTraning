@@ -50,15 +50,23 @@ export const SignInScreen = observer(function SignInScreen() {
   const Get=async ()=>{
     setUsersList( await FetchUsers("/person") );
   }
-  
+  const TestApi = async ()=>{
+    try {
+    const response = await get("http://localhost:8000/status");
+    console.log(response)
+    }catch(error){
+      console.error(error)
+    }
+    
+  }
   
   useEffect( ()=>{
   //profilesStore.getProfile();
     //console.log(profilesStore)  
    //HumanStore.getHumans()
-   utilisateurstore.setPassword("bamir")
-   console.log(utilisateurstore.getPassword)
-
+   //utilisateurstore.setPassword("bamir")
+   //console.log(utilisateurstore.getPassword)
+    TestApi();
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
