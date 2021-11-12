@@ -24,7 +24,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {Users}=ProfileStore;
   //const {tacheStore}=useStores()
   //const {taches}=tacheStore
-  const {profilesStore, HumanStore}=useStores();
+  //const {profilesStore, HumanStore}=useStores();
 
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
@@ -55,7 +55,7 @@ export const SignInScreen = observer(function SignInScreen() {
   useEffect( ()=>{
     //profilesStore.getProfile();
     //console.log(profilesStore)  
-   HumanStore.getHumans()
+   //HumanStore.getHumans()
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
@@ -69,8 +69,8 @@ export const SignInScreen = observer(function SignInScreen() {
           textStyle={BUTTON_TEXT}
         />
         <Button style={BUTTON_SIGNIN} textStyle={BUTTON_TEXT} text="fetch users" onPress={()=>Get()}/>
-        <Text>{profilesStore.getJob}</Text>
-        <Text>{profilesStore.getName}</Text>
+       {/* <Text>{profilesStore.getJob}</Text>
+        <Text>{profilesStore.getName}</Text> */}
 
          
         
