@@ -52,7 +52,7 @@ export const SignInScreen = observer(function SignInScreen() {
   }
   const TestApi = async ()=>{
     try {
-    const response = await fetch("https://www.youtube.com/watch?v=ShZ978fBl6Y");
+    const response = await fetch("http://192.168.0.106:8000/products");
     console.log(response)
     }catch(error){
       console.error(error)
