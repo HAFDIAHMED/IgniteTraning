@@ -153,6 +153,7 @@ export class Api {
     }
     try {
       const utilisateurGet=response.data
+      console.log(data)
       return {status : utilisateurGet.status,token :utilisateurGet.token }
     }catch(error){
       return error
