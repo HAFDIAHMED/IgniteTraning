@@ -68,7 +68,7 @@ export const SignInScreen = observer(function SignInScreen() {
    //utilisateurstore.login("nilson@email.com","nilson")
    //console.log(utilisateurstore.email)
     //TestApi();
-    console.log(utilisateurstore.products)
+    console.log(utilisateurstore.GetProd("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5pbHNvbkBlbWFpbC5jb20iLCJwYXNzd29yZCI6Im5pbHNvbiIsImlhdCI6MTYzNjcxNjEwMiwiZXhwIjoxNjM2NzE5NzAyfQ.10AfsLzkG8mNxRTndNwz3KjcyOdQMMb84E-Z1n89aZY"))
   });
   return ( 
     <Screen style={ROOT} preset="fixed">

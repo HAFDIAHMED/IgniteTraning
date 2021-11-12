@@ -60,7 +60,15 @@ export const UtilisateurModel = types
         self.setToken(response.token)
       })
     }
-    )
+    ),
+    GetProd : flow (function * (token : string){
+      const api= new Api()
+      api.setup()
+      yield api.getUtilisateurProd(token).then((response: any)=>{
+        console.log(response)
+        //self.setProducts(response)
+      })
+    })
 
   }))
   // eslint-disable-line @typescript-eslint/no-unused-vars

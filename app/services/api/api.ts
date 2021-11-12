@@ -159,7 +159,7 @@ export class Api {
       return error
     }
   } 
-  async getUtilisateur (token : string ):Promise<Types.Produits>{
+  async getUtilisateurProd (token : string ):Promise<Types.Produits>{
     this.apisauce.headers["token"]=token
     const response : ApiResponse<any> =await this.apisauce.get('/products');
     if (!response.ok) {
