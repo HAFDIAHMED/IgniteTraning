@@ -52,7 +52,7 @@ export const SignInScreen = observer(function SignInScreen() {
   }
   const TestApi = async ()=>{
     try {
-    const response = await get("http://localhost:8000/status");
+    const response = await fetch("https://www.youtube.com/watch?v=ShZ978fBl6Y");
     console.log(response)
     }catch(error){
       console.error(error)
@@ -66,7 +66,7 @@ export const SignInScreen = observer(function SignInScreen() {
    //HumanStore.getHumans()
    //utilisateurstore.setPassword("bamir")
    //console.log(utilisateurstore.getPassword)
-    TestApi();
+    //TestApi();
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
