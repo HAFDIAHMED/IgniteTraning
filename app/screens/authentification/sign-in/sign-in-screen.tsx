@@ -25,7 +25,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //const {tacheStore}=useStores()
   //const {taches}=tacheStore
  // const {profilesStore, HumanStore}=useStores();
-
+  const {utilisateurstore}=useStores()
   const [task,setTask]=useState({title:"task 1"});
   const [userName,setUserName]=useState({
     userName : "ahmed",
@@ -56,6 +56,7 @@ export const SignInScreen = observer(function SignInScreen() {
   //profilesStore.getProfile();
     //console.log(profilesStore)  
    //HumanStore.getHumans()
+   console.log(utilisateurstore)
   });
   return ( 
     <Screen style={ROOT} preset="fixed">
