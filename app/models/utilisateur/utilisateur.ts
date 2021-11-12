@@ -1,4 +1,5 @@
-import { Instance, SnapshotOut, types } from "mobx-state-tree"
+import { flow, Instance, SnapshotOut, types } from "mobx-state-tree"
+import { Api } from "../../services/api"
 
 /**
  * Model description here for TypeScript hints.
@@ -40,7 +41,22 @@ export const UtilisateurModel = types
     }
 
 
-  })) // eslint-disable-line @typescript-eslint/no-unused-vars
+  }))
+  .actions((self)=>({
+    login : flow(function * (email : string , password : string)
+    {
+      const api = new Api()
+      api.setup()
+      yield api.Login(email, password).then((response : any)=>{
+        if (response.status===200){
+          self.setToken(response.token)
+        }
+      })
+    }
+    )
+
+  }))
+  // eslint-disable-line @typescript-eslint/no-unused-vars
 
 type UtilisateurType = Instance<typeof UtilisateurModel>
 export interface Utilisateur extends UtilisateurType {}
